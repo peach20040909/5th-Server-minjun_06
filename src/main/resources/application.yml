@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:board
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true   # http://localhost:8080/h2-console 에서 DB 확인
+  jpa:
+    hibernate:
+      ddl-auto: create   # 앱 켤 때마다 테이블 새로 생성 (학습용)
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+
+# --- MySQL을 쓸 경우 위 datasource 부분을 이렇게 바꾸세요 ---
+# spring:
+#   datasource:
+#     url: jdbc:mysql://localhost:3306/board?serverTimezone=Asia/Seoul
+#     username: root
+#     password: 본인비밀번호
+#   jpa:
+#     hibernate:
+#       ddl-auto: update
